@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Selenium" verbose="1" parallel="none">
+    <test name="testngTest">
+        <classes>
+            <class name="test.java.TestCase"/>
+        </classes>
+    </test>
+</suite>
