@@ -5,12 +5,12 @@ import main.java.TestBase.TestBase;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
-public class TestCase {
+public class CreditCardPaymentTest {
 
     TestBase tb;
     HomePage hp = new HomePage();
 
-    public TestCase(){
+    public CreditCardPaymentTest(){
         tb = TestBase.getObjectOfTestBase();
     }
 

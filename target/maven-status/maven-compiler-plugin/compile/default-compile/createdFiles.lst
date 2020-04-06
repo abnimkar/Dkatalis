@@ -1,4 +1,6 @@
 main\java\ReusableMethods\ReusableMethods.class
 test\java\TestCase.class
+main\java\TestDataUtility\Utility.class
+main\java\TestDataUtility\Utility$1.class
 main\java\TestBase\TestBase.class
 main\java\Pages\HomePage.class

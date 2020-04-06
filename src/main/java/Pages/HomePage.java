@@ -2,6 +2,7 @@ package main.java.Pages;
 
 import main.java.ReusableMethods.ReusableMethods;
 import main.java.TestBase.TestBase;
+import main.java.TestDataUtility.Utility;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -49,7 +50,7 @@ public class HomePage {
     @FindBy(id = "PaRes")
     WebElement Enter_Password;
 
-    @FindBy(xpath = "(//input[@type='checkbox' and @name='promo'])[2]")
+    @FindBy(xpath = "//input[@type='checkbox' and @name='promo']")
     WebElement Promo_Checkbox_Weekend;
 
     @FindBy(xpath = "//h1[@class='left' and contains(text(),'Issuing Bank')]")
@@ -58,61 +59,112 @@ public class HomePage {
     @FindBy(xpath = "//iframe[contains(@src,'sandbox')]")
     WebElement iframe2;
 
-    public HomePage() throws Throwable {
+    public HomePage() {
         tb = TestBase.getObjectOfTestBase();
         PageFactory.initElements(tb.getDriver(), this);
     }
 
     public void clickOnBuyNow() {
-        BuyNow_Button.click();
-        softassert.assertTrue(Checkout_Button.isDisplayed());
+        try {
+            BuyNow_Button.click();
+            softassert.assertTrue(Checkout_Button.isDisplayed());
+        } catch (Exception e) {
+            e.getMessage();
+            throw e;
+        }
+
+
     }
 
     public void clickOnCheckoutButton() {
-        Checkout_Button.click();
-        rm.waitForFrameToBeLoadAndSwitchToIt(iframe);
-        rm.waitForElementToBeVisible(Continue_Button);
-        softassert.assertTrue(Continue_Button.isDisplayed());
+        try {
+            Checkout_Button.click();
+            rm.waitForFrameToBeLoadAndSwitchToIt(iframe);
+            rm.waitForElementToBeVisible(Continue_Button);
+            softassert.assertTrue(Continue_Button.isDisplayed());
+        } catch (Exception e) {
+            e.getMessage();
+            throw e;
+        }
+
     }
 
     public void clickOnContinueButton() {
-        rm.waitForElementToBeClickable(Continue_Button);
-        rm.clickUsingJavaScriptExecutor(Continue_Button);
+        try {
+            rm.waitForElementToBeClickable(Continue_Button);
+            rm.clickUsingJavaScriptExecutor(Continue_Button);
+        } catch (Exception e) {
+            e.getMessage();
+            throw e;
+        }
+
     }
 
     public void clickOnCreditCard() {
-        Credit_Card_Option.click();
+        try {
+            Credit_Card_Option.click();
+        } catch (Exception e) {
+            e.getMessage();
+            throw e;
+        }
     }
 
     public void enterValidCardDetails() {
-        CardNumber.sendKeys("4811 1111 1111 1114");
-        Expiry_Date.sendKeys("02/22");
-        CVV.sendKeys("123");
-        softassert.assertTrue(PayNow_Button.isDisplayed());
+        try {
+            CardNumber.sendKeys(Utility.getPropertyAndLoadFile("ValidCardNumber"));
+            Expiry_Date.sendKeys(Utility.getPropertyAndLoadFile("ExpiryDate"));
+            CVV.sendKeys(Utility.getPropertyAndLoadFile("CVVNumber"));
+            softassert.assertTrue(PayNow_Button.isDisplayed());
+
+        } catch (Exception e) {
+            e.getMessage();
+            throw e;
+        }
+
     }
 
     public void enterInValidCardCredentials() {
-        CardNumber.sendKeys("4811 1111 1111 1113");
-        Expiry_Date.sendKeys("02/22");
-        CVV.sendKeys("123");
-        softassert.assertTrue(PayNow_Button.isDisplayed());
+        try {
+            CardNumber.sendKeys(Utility.getPropertyAndLoadFile("InValidCardNumber"));
+            Expiry_Date.sendKeys(Utility.getPropertyAndLoadFile("ExpiryDate"));
+            CVV.sendKeys(Utility.getPropertyAndLoadFile("CVVNumber"));
+            softassert.assertTrue(PayNow_Button.isDisplayed());
+        } catch (Exception e) {
+            e.getMessage();
+            throw e;
+        }
+
     }
 
     public void clickOnPayNowButton() {
-        rm.scrollDownTillVisibilityOfElement(Promo_Checkbox_Weekend);
-        rm.clickUsingJavaScriptExecutor(Promo_Checkbox_Weekend);
-        PayNow_Button.click();
-        rm.waitForFrameToBeLoadAndSwitchToIt(iframe2);
-        rm.waitForElementToBeVisible(Issuing_Bank_Text);
-        softassert.assertTrue(Issuing_Bank_Text.isDisplayed());
+        try {
+            rm.scrollDownTillVisibilityOfElement(Promo_Checkbox_Weekend);
+            rm.clickUsingJavaScriptExecutor(Promo_Checkbox_Weekend);
+            PayNow_Button.click();
+            rm.waitForFrameToBeLoadAndSwitchToIt(iframe2);
+            rm.waitForElementToBeVisible(Issuing_Bank_Text);
+            softassert.assertTrue(Issuing_Bank_Text.isDisplayed());
+        } catch (Exception e) {
+            e.getMessage();
+            throw e;
+        }
+
+
     }
 
+
     public void enterPassWordAndClickOnSubmit() {
-        Enter_Password.sendKeys("112233");
-        Submit_Button.click();
-        tb.getDriver().switchTo().defaultContent();
-        rm.waitForElementToBeVisible(Success_Message);
-        String message = Success_Message.getText();
-        softassert.assertEquals(message, "Thank you for your purchase.");
+        try {
+            Enter_Password.sendKeys(Utility.getPropertyAndLoadFile("OTPNumber"));
+            Submit_Button.click();
+            tb.getDriver().switchTo().defaultContent();
+            rm.waitForElementToBeVisible(Success_Message);
+            String message = Success_Message.getText();
+            softassert.assertEquals(message, "Thank you for your purchase.");
+        } catch (Exception e) {
+            e.getMessage();
+            throw e;
+        }
+
     }
 }

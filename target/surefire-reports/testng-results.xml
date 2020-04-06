@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-04-02T10:30:20Z" name="Selenium" finished-at="2020-04-02T10:31:08Z" duration-ms="48138">
+  <suite started-at="2020-04-06T07:47:18Z" name="Selenium" finished-at="2020-04-06T07:48:07Z" duration-ms="49399">
     <groups>
     </groups>
-    <test started-at="2020-04-02T10:30:20Z" name="testngTest" finished-at="2020-04-02T10:31:08Z" duration-ms="48138">
+    <test started-at="2020-04-06T07:47:18Z" name="testngTest" finished-at="2020-04-06T07:48:07Z" duration-ms="49399">
       <class name="test.java.TestCase">
-        <test-method signature="CreditCardPaymentSuccessfulTest()[pri:1, instance:test.java.TestCase@3c9c0d96]" started-at="2020-04-02T10:30:20Z" name="CreditCardPaymentSuccessfulTest" finished-at="2020-04-02T10:30:32Z" duration-ms="11344" status="PASS">
+        <test-method signature="CreditCardPaymentSuccessfulTest()[pri:1, instance:test.java.TestCase@77128536]" started-at="2020-04-06T07:47:18Z" name="CreditCardPaymentSuccessfulTest" finished-at="2020-04-06T07:47:31Z" duration-ms="13504" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreditCardPaymentSuccessfulTest -->
-        <test-method signature="CreditCardPaymentUnSuccessfulTest()[pri:2, instance:test.java.TestCase@3c9c0d96]" started-at="2020-04-02T10:30:32Z" name="CreditCardPaymentUnSuccessfulTest" finished-at="2020-04-02T10:31:05Z" duration-ms="33528" status="FAIL">
+        <test-method signature="CreditCardPaymentUnSuccessfulTest()[pri:2, instance:test.java.TestCase@77128536]" started-at="2020-04-06T07:47:31Z" name="CreditCardPaymentUnSuccessfulTest" finished-at="2020-04-06T07:48:05Z" duration-ms="33702" status="FAIL">
           <exception class="org.openqa.selenium.TimeoutException">
             <message>
               <![CDATA[Expected condition failed: waiting for frame to be available: Proxy element for: DefaultElementLocator 'By.xpath: //iframe[contains(@src,'sandbox')]' (tried for 30 second(s) with 500 milliseconds interval)]]>
@@ -21,8 +21,8 @@
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:81)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
 at main.java.ReusableMethods.ReusableMethods.waitForFrameToBeLoadAndSwitchToIt(ReusableMethods.java:19)
-at main.java.Pages.HomePage.clickOnPayNowButton(HomePage.java:105)
-at test.java.TestCase.CreditCardPaymentUnSuccessfulTest(TestCase.java:38)
+at main.java.Pages.HomePage.clickOnPayNowButton(HomePage.java:144)
+at test.java.TestCase.CreditCardPaymentUnSuccessfulTest(TestCase.java:35)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -61,9 +61,9 @@ Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element:
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
 System info: host: 'ABHINAV', ip: '192.168.0.87', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '12'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 74.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200309095159, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 12092, moz:profile: C:\Users\sony\AppData\Local..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 9ccfa011-3bb4-4441-99c6-71e24234f468
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 74.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200309095159, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 2688, moz:profile: C:\Users\sony\AppData\Local..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webdriver.remote.sessionid: 6d88cd19-170b-474c-ab74-979...}
+Session ID: 6d88cd19-170b-474c-ab74-97960eac59b8
 *** Element info: {Using=xpath, value=//iframe[contains(@src,'sandbox')]}
 at jdk.internal.reflect.GeneratedConstructorAccessor7.newInstance(Unknown Source)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -73,7 +73,6 @@ at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpR
 at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
 at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:319)
 at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:421)
@@ -94,7 +93,7 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreditCardPaymentUnSuccessfulTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.java.TestCase@3c9c0d96]" started-at="2020-04-02T10:31:05Z" name="tearDown" finished-at="2020-04-02T10:31:08Z" duration-ms="3234" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.java.TestCase@77128536]" started-at="2020-04-06T07:48:05Z" name="tearDown" finished-at="2020-04-06T07:48:07Z" duration-ms="2148" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

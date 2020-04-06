@@ -1,44 +1,60 @@
 package main.java.TestBase;
 
+import main.java.TestDataUtility.Utility;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
-import java.io.FileInputStream;
-import java.util.Properties;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
 
-    private static Properties prop;
-    private static WebDriver driver;
+    private WebDriver driver;
     private static TestBase tb = null;
 
-    private TestBase() throws Throwable {
-        prop = new Properties();
-        FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\resources\\Config\\Config.properties");
-        prop.load(fis);
+    private TestBase() {
+        String BrowserName = Utility.getPropertyAndLoadFile("BrowserName");
 
-        String BrowserName = prop.getProperty("BrowserName");
+        DesiredCapabilities capability = null;
 
-        if (BrowserName.equalsIgnoreCase("Chrome")) {
-            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\main\\resources\\All_Drivers\\chromedriver.exe");
-            driver = new ChromeDriver();
-        } else if (BrowserName.equalsIgnoreCase("Firefox")) {
-            System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\src\\main\\resources\\All_Drivers\\geckodriver.exe");
-            driver = new FirefoxDriver();
-        } else if (BrowserName.equalsIgnoreCase("IE")) {
-            System.setProperty("webdriver.ie.driver", System.getProperty("user.dir") + "\\src\\main\\resources\\All_Drivers\\IEDriverSever.exe");
-            driver = new InternetExplorerDriver();
+        if (BrowserName.equalsIgnoreCase("firefox")) {
+            capability = DesiredCapabilities.firefox();
+            capability.setBrowserName("firefox");
+            capability.setPlatform(Platform.ANY);
+            capability.setVersion(capability.getVersion());
+        } else if (BrowserName.equalsIgnoreCase("iexplore")) {
+            capability = DesiredCapabilities.internetExplorer();
+            capability.setBrowserName("iexplore");
+            capability.setPlatform(Platform.ANY);
+            capability.setVersion(capability.getVersion());
+        } else if (BrowserName.equalsIgnoreCase("chrome")) {
+            capability = DesiredCapabilities.chrome();
+            capability.setBrowserName("iexplore");
+            capability.setPlatform(Platform.ANY);
+            capability.setVersion(capability.getVersion());
+        } else if (BrowserName.equalsIgnoreCase("safari")) {
+            capability = DesiredCapabilities.safari();
+            capability.setBrowserName("safari");
+            capability.setPlatform(Platform.ANY);
+            capability.setVersion(capability.getVersion());
         }
 
-        driver.get(prop.getProperty("URL"));
+        try {
+            driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
+        } catch (MalformedURLException e) {
+            e.getMessage();
+        }
+
+        assert driver != null;
+        driver.get(Utility.getPropertyAndLoadFile("URL"));
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
     }
 
-    public static TestBase getObjectOfTestBase() throws Throwable {
+    public static TestBase getObjectOfTestBase(){
         if (tb == null) {
             tb = new TestBase();
         }

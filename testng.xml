@@ -2,7 +2,7 @@
 <suite name="Selenium" verbose="1" parallel="none">
     <test name="testngTest">
         <classes>
-            <class name="test.java.TestCase"/>
+            <class name="test.java.CreditCardPaymentTest"/>
         </classes>
     </test>
 </suite>

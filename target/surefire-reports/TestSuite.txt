@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 59.762 sec <<< FAILURE!
-CreditCardPaymentUnSuccessfulTest(test.java.TestCase)  Time elapsed: 33.559 sec  <<< FAILURE!
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 61.864 sec <<< FAILURE!
+CreditCardPaymentUnSuccessfulTest(test.java.TestCase)  Time elapsed: 33.718 sec  <<< FAILURE!
 org.openqa.selenium.TimeoutException: Expected condition failed: waiting for frame to be available: Proxy element for: DefaultElementLocator 'By.xpath: //iframe[contains(@src,'sandbox')]' (tried for 30 second(s) with 500 milliseconds interval)
 	at jdk.internal.reflect.GeneratedConstructorAccessor7.newInstance(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -12,7 +12,6 @@ org.openqa.selenium.TimeoutException: Expected condition failed: waiting for fra
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:319)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:421)
@@ -27,6 +26,6 @@ org.openqa.selenium.TimeoutException: Expected condition failed: waiting for fra
 	at org.openqa.selenium.support.ui.ExpectedConditions$19.apply(ExpectedConditions.java:565)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
 	at main.java.ReusableMethods.ReusableMethods.waitForFrameToBeLoadAndSwitchToIt(ReusableMethods.java:19)
-	at main.java.Pages.HomePage.clickOnPayNowButton(HomePage.java:105)
-	at test.java.TestCase.CreditCardPaymentUnSuccessfulTest(TestCase.java:38)
+	at main.java.Pages.HomePage.clickOnPayNowButton(HomePage.java:144)
+	at test.java.TestCase.CreditCardPaymentUnSuccessfulTest(TestCase.java:35)
 

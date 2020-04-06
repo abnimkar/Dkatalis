@@ -146,21 +146,20 @@
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:81)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
 	at main.java.ReusableMethods.ReusableMethods.waitForFrameToBeLoadAndSwitchToIt(ReusableMethods.java:19)
-	at main.java.Pages.HomePage.clickOnPayNowButton(HomePage.java:105)
-	at test.java.TestCase.CreditCardPaymentUnSuccessfulTest(TestCase.java:38)
+	at main.java.Pages.HomePage.clickOnPayNowButton(HomePage.java:144)
+	at test.java.TestCase.CreditCardPaymentUnSuccessfulTest(TestCase.java:35)
 Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: //iframe[contains(@src,&apos;sandbox&apos;)]
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
 System info: host: &apos;ABHINAV&apos;, ip: &apos;192.168.0.87&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;12&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 74.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200309095159, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 12092, moz:profile: C:\Users\sony\AppData\Local..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 9ccfa011-3bb4-4441-99c6-71e24234f468
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 74.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200309095159, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 2688, moz:profile: C:\Users\sony\AppData\Local..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webdriver.remote.sessionid: 6d88cd19-170b-474c-ab74-979...}
+Session ID: 6d88cd19-170b-474c-ab74-97960eac59b8
 *** Element info: {Using=xpath, value=//iframe[contains(@src,&apos;sandbox&apos;)]}
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:319)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:421)
@@ -252,16 +251,16 @@ data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'CreditCardPaymentUnSuccessfulTest')
 data.setCell(0, 2, 'test.java.TestCase')
-data.setCell(0, 3, 33528);
+data.setCell(0, 3, 33702);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'CreditCardPaymentSuccessfulTest')
 data.setCell(1, 2, 'test.java.TestCase')
-data.setCell(1, 3, 11344);
+data.setCell(1, 3, 13504);
 window.suiteTableData['Selenium']= { tableData: data, tableDiv: 'times-div-Selenium'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 44 seconds</span>
+              <span class="suite-total-time">Total running time: 47 seconds</span>
               <div id="times-div-Selenium">
               </div> <!-- times-div-Selenium -->
             </div> <!-- times-div -->
@@ -296,11 +295,11 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">CreditCardPaymentUnSuccessfulTest</span>
-                <span class="method-start">11344 ms</span>
+                <span class="method-start">13508 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">44888 ms</span>
+                <span class="method-start">47226 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
